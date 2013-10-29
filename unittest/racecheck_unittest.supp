@@ -1,0 +1,59 @@
+{
+   Expected UnlockForeign in test127
+   ThreadSanitizer:UnlockForeign
+   ...
+   fun:*test127*
+}
+
+{
+   Expected UnlockNonLocked in test136
+   ThreadSanitizer:UnlockNonLocked
+   ...
+   fun:*test136*
+}
+
+{
+   fun:*StressTests*FlushStateTest*
+   ThreadSanitizer:Race
+   ...
+   fun:*StressTests*FlushStateTest*
+}
+
+{
+   SuppressionTests.TemplateTypesSuppressionTest (1)
+   ThreadSanitizer:Race
+   fun:SuppressionTests::Foo
+   fun:SuppressionTests::TemplateFunction1
+   fun:SuppressionTests::Worker
+}
+
+{
+   SuppressionTests.TemplateTypesSuppressionTest (2)
+   ThreadSanitizer:Race
+   fun:SuppressionTests::Foo
+   fun:SuppressionTests::MyClass::Fooz
+   fun:SuppressionTests::TemplateFunction2
+   fun:SuppressionTests::Worker
+}
+
+{
+   SuppressionTests.TemplateTypesSuppressionTest (3)
+   ThreadSanitizer:Race
+   fun:SuppressionTests::Foo
+   fun:SuppressionTests::TemplateFunction3
+   fun:SuppressionTests::Worker
+}
+
+{
+   SuppressionTests.TemplateTypesSuppressionTest (4)
+   ThreadSanitizer:Race
+   fun:SuppressionTests::ArrayFunction
+   fun:SuppressionTests::Worker
+}
+
+{
+   SuppressionTests.VeryLongTypeArgumentTest
+   ThreadSanitizer:Race
+   fun:SuppressionTests::F
+   fun:SuppressionTests::WorkerLong
+}

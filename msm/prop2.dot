@@ -1,0 +1,56 @@
+digraph prop2 {
+   NoAccess [shape=rectangle label="NoAccess"];
+   New   [shape=rectangle label="New"];
+
+
+
+   Read  [shape=plaintext label=<<TABLE BGCOLOR="white"> <tr> 
+        <td colspan="3">Read</td> 
+      </tr> <tr> 
+        <td bgcolor="green">R:</td>
+        <td> SSR </td>
+        <td> LSR </td>
+      </tr> </TABLE>>
+    ]
+
+   Write  [shape=plaintext label=<<TABLE BGCOLOR="white"> <tr> 
+        <td colspan="3">Write</td> 
+      </tr> <tr> 
+        <td bgcolor="red">W:</td>
+        <td> SSW </td>
+        <td> LSW </td>
+      </tr> </TABLE>>
+    ]
+
+
+   WriteRead  [shape=plaintext label=<<TABLE BGCOLOR="white"> <tr> 
+        <td colspan="3">WriteRead</td> 
+      </tr> <tr> 
+        <td bgcolor="red">W:</td>
+        <td> SSW </td>
+        <td> LSW </td>
+      </tr> <tr> 
+        <td bgcolor="green">R:</td>
+        <td> SSR </td>
+        <td> LSR </td>
+      </tr> </TABLE>>
+    ]
+
+
+
+
+
+   NoAccess -> New         [label="E1"];
+   New      -> Read        [label="E2"];
+   New      -> Write       [label="E3"];
+   Read     -> Read        [label="E4"];
+   Read     -> Write       [label="E5"];
+   Write    -> Read         [label="E6"];
+   Write    -> WriteRead   [label="E7"];
+   Write    -> Write        [label="E8"];
+   WriteRead-> Read        [label="E9"];
+   WriteRead-> WriteRead   [label="E10"];
+   WriteRead-> Write       [label="E11"];
+
+
+}

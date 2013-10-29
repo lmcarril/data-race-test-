@@ -1,0 +1,43 @@
+digraph barrier1 {
+//  orientation=landscape; 
+  Seg1_Thr1 [color = green];
+  Seg2_Thr1 [color = green];
+  
+  Seg1_Thr2 [color = blue];
+  Seg2_Thr2 [color = blue];
+
+  Seg1_Thr3 [color = orange];
+  Seg2_Thr3 [color = orange];
+
+  Seg1_Thr1 -> Seg2_Thr1;
+  Seg1_Thr2 -> Seg2_Thr2;
+  Seg1_Thr3 -> Seg2_Thr3;
+
+  subgraph cluster1 {
+    style = "setlinewidth(0)";
+    Seg1_Thr1;
+    Seg1_Thr2;
+    Seg1_Thr3;
+  }
+  subgraph cluster2 {
+    style = "setlinewidth(0)";
+    Seg2_Thr1;
+    Seg2_Thr2;
+    Seg2_Thr3;
+  }
+
+//  subgraph cluster_thr1 { Seg1_Thr1; Seg2_Thr1;}
+//  subgraph cluster_thr2 { Seg1_Thr2; Seg2_Thr2;}
+//  subgraph cluster_thr3 { Seg1_Thr3; Seg2_Thr3;}
+
+
+  Seg1_Thr1 -> Fake1 [color = red];
+  Seg1_Thr2 -> Fake2 [color = red];
+  Seg1_Thr3 -> Fake3 [color = red];
+
+  Fake1 -> Fake2 -> Fake3;
+  Fake3 -> Seg2_Thr1 [color = red];
+  Fake3 -> Seg2_Thr2 [color = red];
+  Fake3 -> Seg2_Thr3 [color = red];
+
+}

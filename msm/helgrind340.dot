@@ -1,0 +1,28 @@
+digraph prop1 {
+   New   [shape=rectangle label="New"];
+
+   RDO  [shape=plaintext label=<<TABLE BGCOLOR="white"> <tr> 
+        <td colspan="2">RdO</td> 
+      </tr> <tr> 
+        <td> SS </td>
+        <td> LS </td>
+      </tr> </TABLE>>
+    ]
+
+   MOD  [shape=plaintext label=<<TABLE BGCOLOR="white"> <tr> 
+        <td colspan="2">Mod</td> 
+      </tr> <tr> 
+        <td> SS </td>
+        <td> LS </td>
+      </tr> </TABLE>>
+    ]
+
+
+
+   New      -> RDO   [label="E1"];
+   New      -> MOD  [label="E2"];
+   RDO     -> RDO   [label="E3"];
+   RDO     -> MOD  [label="E4" color="red" fontcolor="red"];
+   MOD    -> RDO   [label="E5"];
+   MOD    -> MOD  [label="E6" color="red" fontcolor="red"];
+}
